@@ -240,6 +240,38 @@
     animation: gradient 15s ease infinite; */
 }
 
+.mouse-cursor-gradient-tracking {
+    position: relative;
+    /* background: #7983ff; */
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    /* color: white; */
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+}
+
+.mouse-cursor-gradient-tracking span {
+    position: relative;
+}
+
+.mouse-cursor-gradient-tracking::before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, pink, transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+.mouse-cursor-gradient-tracking:hover::before {
+    --size: 200px;
+}
 
 
 .svg-background {
@@ -8263,6 +8295,14 @@ svg.radial-progress text {
 @media (max-width: 768px) {
     .grid-view .product-item-wrapper>div {
         width: 100%;
+    }
+
+    .wd_2 {
+        max-width: 20%;
+    }
+
+    .wd_5 {
+        width: 50%;
     }
 }
 
